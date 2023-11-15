@@ -37,7 +37,6 @@ def main():
         if user_input:
             template = user_input
     
-    print(template)
     template = template + utils.template_end
     PROMPT = PromptTemplate(input_variables=["history", "input"], template=template)
 
