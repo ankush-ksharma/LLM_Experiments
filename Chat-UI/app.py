@@ -17,9 +17,6 @@ def init():
     if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
         print("OPENAI_API_KEY is not set")
         exit(1)
-    if "openai_model" not in st.session_state:
-        st.session_state["openai_model"] = "gpt-3.5-turbo"
-
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = []
     # setup streamlit page
@@ -29,7 +26,7 @@ def init():
 
 def main():
     init()
-    llm = ChatOpenAI(temperature=0.7, openai_api_key=os.getenv("OPENAI_API_KEY"), model_name= st.session_state["openai_model"])
+    llm = ChatOpenAI(temperature=0.7, openai_api_key=os.getenv("OPENAI_API_KEY"), model_name= "gpt-3.5-turbo")
     template = utils.template 
 
     with st.sidebar:
