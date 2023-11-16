@@ -62,7 +62,7 @@ agent = initialize_agent(
 )
 
 def main():
-    content = agent({"input": "What is the import of LNG in India. Return a list of Ports and their LNG imports"})
+    content = agent({"input": "Find out the score of latest cricket world cup match"})
     actual_content = content['output']
     print(actual_content)
 
